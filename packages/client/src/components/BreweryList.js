@@ -2,6 +2,18 @@ import BreweryCard from './BreweryCard';
 
 const BreweryList = ({ brewery }) => {
   console.log(brewery);
+  const {
+    name,
+    brewery_type,
+    street,
+    city,
+    state,
+    postal_code,
+    website_url,
+    latitude,
+    longitude,
+  } = brewery;
+
   /*
  
   Name
@@ -17,7 +29,18 @@ const BreweryList = ({ brewery }) => {
 
   */
 
-  return <div>{/* <BreweryCard name={name} /> */}</div>;
+  return (
+    <div>
+      <BreweryCard
+        name={name}
+        type={brewery_type}
+        address={`${street ? street : ''} ${city}, ${state}, ${postal_code}`}
+        website={website_url}
+        latitude={latitude}
+        longitude={longitude}
+      />
+    </div>
+  );
 };
 
 export default BreweryList;

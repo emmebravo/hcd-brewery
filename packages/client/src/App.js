@@ -1,7 +1,9 @@
 import './App.css';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+
 import BreweryList from './components/BreweryList';
+// import Container from 'react-bootstrap/Container';
 
 function App() {
   const [breweryData, setBreweryData] = useState([]);
@@ -22,7 +24,7 @@ function App() {
     <BreweryList key={brewery.id} brewery={brewery} />
   ));
 
-  return <div className='App'>{breweryData && breweries}</div>;
+  return <div>{breweryData && breweries}</div>;
 }
 
 export default App;

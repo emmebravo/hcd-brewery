@@ -1,46 +1,27 @@
+import { useState, useEffect } from 'react';
 import BreweryCard from './BreweryCard';
+import axios from 'axios';
 
-const BreweryList = ({ brewery }) => {
-  console.log(brewery);
-  const {
-    name,
-    brewery_type,
-    street,
-    city,
-    state,
-    postal_code,
-    website_url,
-    latitude,
-    longitude,
-  } = brewery;
+const BreweryList = () => {
+  const [breweryData, setBreweryData] = useState([]);
 
-  /*
- 
-  Name
-  Type
-  Address
-  Website --> if available, open in new tab
-  
-  --When details clicked, open new component
-  Brewery Name
-  Address
-  Map (google map react)
-  Go back to List
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await axios.get(
+        'https://api.openbrewerydb.org/breweries?by_city=los_angeles'
+      );
+      const data = await response.data;
+      setBreweryData(data);
+    };
 
-  */
+    fetchData();
+  }, []);
 
-  return (
-    <div>
-      <BreweryCard
-        name={name}
-        type={brewery_type}
-        address={`${street ? street : ''} ${city}, ${state}, ${postal_code}`}
-        website={website_url}
-        latitude={latitude}
-        longitude={longitude}
-      />
-    </div>
-  );
+  const breweries = breweryData.map((brewery) => (
+    <BreweryCard key={brewery.id} brewery={brewery} />
+  ));
+
+  return <div>{breweryData && breweries}</div>;
 };
 
 export default BreweryList;

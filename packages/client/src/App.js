@@ -1,30 +1,21 @@
 import './App.css';
-import { useState, useEffect } from 'react';
-import axios from 'axios';
+import { Router, Route, Routes } from 'react-router-dom';
 
 import BreweryList from './components/BreweryList';
+import Header from './components/Header';
 // import Container from 'react-bootstrap/Container';
 
 function App() {
-  const [breweryData, setBreweryData] = useState([]);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const response = await axios.get(
-        'https://api.openbrewerydb.org/breweries?by_city=los_angeles'
-      );
-      const data = await response.data;
-      setBreweryData(data);
-    };
-
-    fetchData();
-  }, []);
-
-  const breweries = breweryData.map((brewery) => (
-    <BreweryList key={brewery.id} brewery={brewery} />
-  ));
-
-  return <div>{breweryData && breweries}</div>;
+  return (
+    <div>
+      <Header />
+      <Routes>
+        <Route exact path='/' element={<BreweryList />} />
+        {/* <Route exact path='/info' element={<BreweryInfo />} /> */}
+        {/* <Route path='*' element={<NotFound />} /> */}
+      </Routes>
+    </div>
+  );
 }
 
 export default App;

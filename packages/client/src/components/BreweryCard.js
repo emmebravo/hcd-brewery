@@ -1,5 +1,11 @@
 import { Link } from 'react-router-dom';
-import { Grid, CardContent, Card, CardActions } from '@mui/material';
+import {
+  Grid,
+  CardContent,
+  Card,
+  CardActions,
+  Typography,
+} from '@mui/material';
 
 const BreweryCard = ({ brewery }) => {
   const {
@@ -18,14 +24,14 @@ const BreweryCard = ({ brewery }) => {
     <Grid item xs={12} sm={4}>
       <Card variant='outlined' sx={{ height: '100%' }}>
         <CardContent>
-          <p>Name: {name}</p>
-          <p>Type: {brewery_type}</p>
-          <p>
+          <Typography>Name: {name}</Typography>
+          <Typography>Type: {brewery_type}</Typography>
+          <Typography>
             Address:{' '}
             {`${street ? street + ',' : ''} ${city}, ${state}, ${postal_code}`}
-          </p>
+          </Typography>
           {website_url && (
-            <p>
+            <Typography>
               Website:{' '}
               <a
                 href={`${website_url}`}
@@ -34,7 +40,7 @@ const BreweryCard = ({ brewery }) => {
               >
                 {website_url}
               </a>
-            </p>
+            </Typography>
           )}
         </CardContent>
         <CardActions>
@@ -56,7 +62,7 @@ const BreweryCard = ({ brewery }) => {
               },
             }}
           >
-            Learn More
+            <Typography>Learn More</Typography>
           </Link>
         </CardActions>
       </Card>

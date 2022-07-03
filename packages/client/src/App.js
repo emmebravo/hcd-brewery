@@ -4,6 +4,7 @@ import { Route, Routes } from 'react-router-dom';
 import axios from 'axios';
 
 import BreweryList from './components/BreweryList';
+import BreweryInfo from './components/BreweryInfo';
 import Header from './components/Header';
 import Container from '@mui/material/Container';
 
@@ -21,8 +22,6 @@ function App() {
 
     fetchData();
   }, []);
-
-  console.log(breweryData);
 
   return (
     <Container>

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Grid, Item, Typography } from '@mui/material';
+import { Grid, Typography } from '@mui/material';
 
 const Details = ({ name, address }) => {
   const addy = address.map((place) => (

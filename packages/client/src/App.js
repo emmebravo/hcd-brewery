@@ -3,8 +3,8 @@ import { useState, useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import axios from 'axios';
 
-import BreweryList from './components/BreweryList';
-import BreweryInfo from './components/BreweryInfo';
+import List from './components/List';
+import Information from './components/Information';
 import Header from './components/Header';
 import Container from '@mui/material/Container';
 
@@ -27,8 +27,8 @@ function App() {
     <Container>
       <Header />
       <Routes>
-        <Route exact path='/' element={<BreweryList brewery={breweryData} />} />
-        <Route exact path='/info' element={<BreweryInfo />} />
+        <Route exact path='/' element={<List brewery={breweryData} />} />
+        <Route exact path='/info' element={<Information />} />
         {/* <Route path='*' element={<NotFound />} /> */}
       </Routes>
     </Container>

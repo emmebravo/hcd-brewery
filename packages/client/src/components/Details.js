@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Grid, Item, Typography } from '@mui/material';
 
-const BreweryDeets = ({ name, address }) => {
+const Details = ({ name, address }) => {
   const addy = address.map((place) => (
     <Typography key={place.postal_code}>
       {place.street ? place.street + ',' : ''} {place.city}, {place.state},{' '}
@@ -20,4 +20,4 @@ const BreweryDeets = ({ name, address }) => {
   );
 };
 
-export default BreweryDeets;
+export default Details;

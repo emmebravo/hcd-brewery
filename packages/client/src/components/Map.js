@@ -3,7 +3,7 @@ import GoogleMapReact from 'google-map-react';
 import { Grid, Paper, Typography } from '@mui/material';
 import PinDrop from '@mui/icons-material/PinDrop';
 
-const BreweryMap = ({ name, latitude, longitude }) => {
+const Map = ({ name, latitude, longitude }) => {
   const Marker = ({ text }) => (
     <Paper>
       <PinDrop fontSize='large' />
@@ -28,4 +28,4 @@ const BreweryMap = ({ name, latitude, longitude }) => {
   );
 };
 
-export default BreweryMap;
+export default Map;

@@ -1,9 +1,9 @@
-import BreweryCard from './BreweryCard';
+import Cards from './Cards';
 import Grid from '@mui/material/Grid';
 
-const BreweryList = ({ brewery }) => {
+const List = ({ brewery }) => {
   const breweries = brewery.map((brewery) => (
-    <BreweryCard key={brewery.id} brewery={brewery} />
+    <Cards key={brewery.id} brewery={brewery} />
   ));
 
   return (
@@ -18,4 +18,4 @@ const BreweryList = ({ brewery }) => {
   );
 };
 
-export default BreweryList;
+export default List;

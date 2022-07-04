@@ -7,7 +7,7 @@ import {
   Typography,
 } from '@mui/material';
 
-const BreweryCard = ({ brewery }) => {
+const Cards = ({ brewery }) => {
   const {
     name,
     brewery_type,
@@ -61,4 +61,4 @@ const BreweryCard = ({ brewery }) => {
   );
 };
 
-export default BreweryCard;
+export default Cards;

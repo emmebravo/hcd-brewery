@@ -1,12 +1,18 @@
-import GoogleMapReact from 'google-map-react';
+import { useLocation } from 'react-router-dom';
 
-const BreweryInfo = ({ name, address, latitude, longitude }) => {
+import { Grid } from '@mui/material';
+import BreweryDeets from './BreweryDeets';
+import BreweryMap from './BreweryMap';
+
+const BreweryInfo = () => {
+  const location = useLocation();
+  const { name, address, latitude, longitude } = location.state;
+
   return (
-    <div style={{ height: '100vh', width: '100%' }}>
-      <GoogleMapReact>
-        <></>
-      </GoogleMapReact>
-    </div>
+    <Grid container>
+      <BreweryDeets name={name} address={address} />
+      <BreweryMap name={name} latitude={latitude} longitude={longitude} />
+    </Grid>
   );
 };
 

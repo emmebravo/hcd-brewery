@@ -45,21 +45,12 @@ const BreweryCard = ({ brewery }) => {
         </CardContent>
         <CardActions>
           <Link
-            to={{
-              pathname: '/info',
-              state: {
-                name: { name },
-                address: [
-                  {
-                    street: { street },
-                    city: { city },
-                    state: { state },
-                    zip: { postal_code },
-                  },
-                ],
-                latitude: { latitude },
-                longitude: { longitude },
-              },
+            to='/info'
+            state={{
+              name,
+              address: [{ street, city, state, postal_code }],
+              latitude,
+              longitude,
             }}
           >
             <Typography>Learn More</Typography>

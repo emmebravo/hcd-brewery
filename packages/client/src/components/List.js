@@ -1,8 +1,26 @@
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+
 import Cards from './Cards';
 import Grid from '@mui/material/Grid';
 
-const List = ({ brewery }) => {
-  const breweries = brewery.map((brewery) => (
+const List = () => {
+  const [breweryData, setBreweryData] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await axios.get(
+        // 'https://api.openbrewerydb.org/breweries?by_city=los_angeles'
+        process.env.REACT_APP_BACKEND
+      );
+      const data = await response.data;
+      setBreweryData(data);
+    };
+
+    fetchData();
+  }, []);
+
+  const breweries = breweryData.map((brewery) => (
     <Cards key={brewery.id} brewery={brewery} />
   ));
 

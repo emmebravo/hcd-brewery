@@ -23,8 +23,6 @@ const List = () => {
     fetchData();
   }, []);
 
-  console.log(breweryData);
-
   const breweries = breweryData.map((brewery) => (
     <Cards key={brewery.id} brewery={brewery} />
   ));

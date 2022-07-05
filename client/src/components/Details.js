@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+
 import { Grid, Typography } from '@mui/material';
 
 const Details = ({ name, address }) => {

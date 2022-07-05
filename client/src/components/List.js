@@ -9,9 +9,15 @@ const List = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await axios.get(`${process.env.REACT_APP_BACKEND}/api`);
-      const data = await response.data;
-      setBreweryData(data);
+      try {
+        const response = await axios.get(
+          `${process.env.REACT_APP_BACKEND}/api`
+        );
+        const data = await response.data;
+        setBreweryData(data);
+      } catch (error) {
+        console.error(error);
+      }
     };
 
     fetchData();

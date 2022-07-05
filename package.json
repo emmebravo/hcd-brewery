@@ -4,11 +4,11 @@
   "main": "server.js",
   "license": "MIT",
   "scripts": {
-    "client-install": "yarn add --prefix client",
+    "client-install": "yarn add --cwd client",
     "start": "node server.js",
     "server": "nodemon server.js",
-    "client": "yarn start --prefix client",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false"
+    "client": "yarn --cwd client start",
+    "heroku-postbuild": "YARN_PRODUCTION=false yarn install --cwd client && yarn build"
   },
   "type": "module",
   "dependencies": {

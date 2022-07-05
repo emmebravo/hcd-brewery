@@ -13,6 +13,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
+// routes
+app.get('/api', (request, response) => {
+  response.json(data);
+});
+
 // serve static assets if in production
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'));
@@ -22,11 +27,6 @@ if (process.env.NODE_ENV === 'production') {
     response.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
   });
 }
-
-// routes
-app.get('/api', (request, response) => {
-  response.json(data);
-});
 
 app.listen(PORT, () => {
   console.log(`server running on PORT ${PORT}`);

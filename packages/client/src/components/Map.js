@@ -14,13 +14,11 @@ const Map = ({ name, latitude, longitude }) => {
   const LOS_ANGELES = [34.0522, -118.2437];
 
   return (
-    <Grid item sx={{ height: '50vh', width: '100%' }}>
+    <Grid item sx={{ height: '50vh', width: '100%', marginTop: '1rem' }}>
       <GoogleMapReact
         defaultZoom={10}
         defaultCenter={LOS_ANGELES}
-        bootstrapURLKeys={{
-          key: process.env.REACT_APP_MAP_KEY || '',
-        }}
+        bootstrapURLKeys={{ key: process.env.REACT_APP_MAP_KEY }}
       >
         <Marker lat={latitude} lng={longitude} text={name} />
       </GoogleMapReact>

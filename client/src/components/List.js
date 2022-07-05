@@ -34,7 +34,7 @@ const List = () => {
       columns={{ xs: 4, sm: 8, md: 12 }}
       sx={{ margin: 'calc(1rem + 3vw)' }}
     >
-      {breweries}
+      {breweryData && breweries}
     </Grid>
   );
 };

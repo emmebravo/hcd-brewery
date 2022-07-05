@@ -9,10 +9,7 @@ const List = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await axios.get(
-        // 'https://api.openbrewerydb.org/breweries?by_city=los_angeles'
-        process.env.REACT_APP_BACKEND
-      );
+      const response = await axios.get(process.env.REACT_APP_BACKEND);
       const data = await response.data;
       setBreweryData(data);
     };

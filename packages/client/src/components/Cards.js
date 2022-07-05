@@ -37,6 +37,7 @@ const Cards = ({ brewery }) => {
                 href={`${website_url}`}
                 target='_blank'
                 rel='noopener noreferrer'
+                style={{ color: 'blue' }}
               >
                 {website_url}
               </a>
@@ -52,6 +53,7 @@ const Cards = ({ brewery }) => {
               latitude,
               longitude,
             }}
+            style={{ color: 'blue' }}
           >
             <Typography>Learn More</Typography>
           </Link>

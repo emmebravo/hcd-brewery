@@ -3,9 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
-  "dependencies": {
-    "concurrently": "^7.2.2"
-  },
+  "dependencies": {},
   "scripts": {
     "client": "yarn --cwd packages/client start",
     "build": "yarn --cwd packages/client build",

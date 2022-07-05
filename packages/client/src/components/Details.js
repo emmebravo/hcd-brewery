@@ -10,13 +10,19 @@ const Details = ({ name, address }) => {
   ));
 
   return (
-    <Grid item sx={{}}>
-      <Typography>{name}</Typography>
-      {addy}
-      <Typography sx={{}}>
-        <Link to='/'>Back to List</Link>
-      </Typography>
-    </Grid>
+    <>
+      <Grid item xs={11}>
+        <Typography>{name}</Typography>
+        {addy}
+      </Grid>
+      <Grid item xs={1}>
+        <Typography>
+          <Link to='/' style={{ color: 'blue' }}>
+            Back to List
+          </Link>
+        </Typography>
+      </Grid>
+    </>
   );
 };
 

@@ -9,7 +9,7 @@ const List = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await axios.get(process.env.REACT_APP_BACKEND);
+      const response = await axios.get('https://hcd-brewery-app.herokuapp.com');
       const data = await response.data;
       setBreweryData(data);
     };

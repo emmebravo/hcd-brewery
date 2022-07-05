@@ -24,7 +24,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 // routes
-app.get('/', (request, response) => {
+app.get('/api', (request, response) => {
   response.json(data);
 });
 

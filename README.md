@@ -1,4 +1,4 @@
-# HCD Brewery Challenge
+# LA Breweries
 
 ## FE in React
 
